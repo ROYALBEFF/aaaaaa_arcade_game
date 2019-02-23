@@ -2,7 +2,15 @@
 A VVVVVV inspired arcade game created with PyGame.
 
 ## Installation
+First clone the project and navigate to the project directory, then run the `setup.py`.
+
 ```{bash}
-cd /path/to/this/project
+git clone https://github.com/ROYALBEFF/aaaaaa_arcade_game.git
+cd aaaaaa_arcade_game
 python setup.py install --user
+```
+
+After the installation you can run the game from command-line: 
+```{bash}
+aaaaaa
 ```
