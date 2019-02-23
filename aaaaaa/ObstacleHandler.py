@@ -1,4 +1,4 @@
-from Obstacle import Obstacle
+from aaaaaa.Obstacle import Obstacle
 import random
 
 

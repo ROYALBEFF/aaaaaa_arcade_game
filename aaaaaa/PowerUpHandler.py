@@ -1,7 +1,7 @@
-from OneUP import  OneUP
-from Multiplier import Multiplier
-from Shield import Shield
-from Bomb import Bomb
+from aaaaaa.OneUP import  OneUP
+from aaaaaa.Multiplier import Multiplier
+from aaaaaa.Shield import Shield
+from aaaaaa.Bomb import Bomb
 import random
 
 

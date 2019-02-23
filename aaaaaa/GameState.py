@@ -1,39 +1,52 @@
 import csv
+import os
 
-class GameState():
+
+class GameState:
 
     def __init__(self):
         """
         Initialize game state variables.
         """
         self.__quit_game = False
+
         # score parameters
         self.__bonus = 20
         self.__multiplier = 1
         self.__score = 0
         self.__nick = 'AAA'
+
         # obstacle parameters
         self.__obstacle_speed = 5
         self.__obstacle_prob = 1
         # if power_up_obstacles exceeds 10000 reset and power up obstacle parameters
         self.__power_up_obstacles = 0
+
         # list of current obstacles and powerups in the game
         self.__obstacles = []
         self.__powerups = []
+
         # load nick names and scores from highscore file
-        self.__nicks, self.__scores = self.__load_highscore("highscore.csv")
+        home =  os.environ['HOME']
+        self.__highscore_path = home+'/.config/aaaaaa/highscore.csv'
+        if not os.path.exists(self.__highscore_path):
+            self.__initialize_highscore()
+        self.__nicks, self.__scores = self.__load_highscore(self.__highscore_path)
+
         # update highscore
         self.__update_highscore = True
         # rank of new highscore
         self.__highscore_pos = None
         # check if player reached new highscore
         self.__new_highscore = False
+
         # check if player needs to input nick
         self.__input_nick = True
         # character position while nick input
         self.__nick_pos = 0
         # possible nick characters
         self.__chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!#$%*+=-'
+
         # pause game
         self.__pause = False
         # show title screen
@@ -325,7 +338,7 @@ class GameState():
         Set input_nick to False and update highscore file
         """
         self.__input_nick = False
-        self.__write_highscore('highscore.csv')
+        self.__write_highscore(self.__highscore_path)
 
     def __write_highscore(self, file):
         """
@@ -422,3 +435,23 @@ class GameState():
         self.__input_nick = True
         # character position while nick input
         self.__nick_pos = 0
+
+    def __initialize_highscore(self):
+        """
+        Initialize highscore csv file.
+        """
+        rows = [['AAA', 10000],
+                ['AAA', 9000],
+                ['AAA', 8000],
+                ['AAA', 7000],
+                ['AAA', 6000],
+                ['AAA', 5000],
+                ['AAA', 4000],
+                ['AAA', 3000],
+                ['AAA', 2000],
+                ['AAA', 1000]]
+
+        with open(self.__highscore_path, 'w') as f:
+            writer = csv.writer(f)
+            writer.writerows(rows)
+            f.close()

@@ -1,4 +1,5 @@
 import random
+import pkg_resources
 import pygame
 
 
@@ -14,7 +15,8 @@ class Powerup:
             Number of ticks the powerup will stay until it is removed.
         """
         # load obstacle image
-        self.__img = pygame.image.load('resources/obstacle.png')
+        image_path = pkg_resources.resource_filename('aaaaaa.resources.images', 'obstacle.png')
+        self.__img = pygame.image.load(image_path)
         self.__color = color
         self.__img.fill((0, 0, 0, 255), None, pygame.BLEND_RGB_MULT)
         self.__img.fill(self.__color, None, pygame.BLEND_RGB_ADD)

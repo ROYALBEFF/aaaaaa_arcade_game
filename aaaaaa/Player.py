@@ -1,3 +1,4 @@
+import pkg_resources
 import pygame
 
 
@@ -13,7 +14,8 @@ class Player:
             Start position Y
         """
         # load player image
-        self.__img = pygame.image.load('resources/player.png')
+        image_path = pkg_resources.resource_filename('aaaaaa.resources.images', 'player.png')
+        self.__img = pygame.image.load(image_path)
         # player position
         self.__x = x
         self.__y = y

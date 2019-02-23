@@ -1,4 +1,5 @@
 import random
+import pkg_resources
 import pygame
 
 
@@ -12,7 +13,8 @@ class Obstacle:
             Movement speed.
         """
         # load obstacle image
-        self.__img = pygame.image.load('resources/obstacle.png')
+        image_path = pkg_resources.resource_filename('aaaaaa.resources.images', 'obstacle.png')
+        self.__img = pygame.image.load(image_path)
         # obstacle position
         self.__x = random.sample([0, 1000], 1)[0]
         self.__y = random.randint(35, 800-35-26)

@@ -1,14 +1,14 @@
-from GameState import GameState
-from Player import Player
-from PowerUpHandler import PowerUpHandler
-from ObstacleHandler import ObstacleHandler
-from Screen import Screen
-from InputHandler import InputHandler
-from CollisionHandler import CollisionHandler
+from aaaaaa.GameState import GameState
+from aaaaaa.Player import Player
+from aaaaaa.PowerUpHandler import PowerUpHandler
+from aaaaaa.ObstacleHandler import ObstacleHandler
+from aaaaaa.Screen import Screen
+from aaaaaa.InputHandler import InputHandler
+from aaaaaa.CollisionHandler import CollisionHandler
 import pygame
 
 
-def main():
+def main(args=None):
     # initialize pygame and game state
     pygame.init()
     screen = Screen()
@@ -115,7 +115,3 @@ def main():
         screen.update()
 
     pygame.quit()
-
-
-if __name__ == '__main__':
-    main()

@@ -1,3 +1,4 @@
+import pkg_resources
 import pygame
 
 
@@ -27,12 +28,14 @@ class Screen:
         self.__message = ''
 
         # extra life symbol
-        self.__symbol = pygame.image.load("resources/extra_lives.png")
+        image_path = pkg_resources.resource_filename('aaaaaa.resources.images', 'extra_lives.png')
+        self.__symbol = pygame.image.load(image_path)
         self.__symbol_rect = self.__symbol.get_rect()
         self.__symbol_rect.topleft = [980, 10]
 
         # bomb symbol
-        self.__bomb = pygame.image.load("resources/obstacle.png")
+        image_path = pkg_resources.resource_filename('aaaaaa.resources.images', 'obstacle.png')
+        self.__bomb = pygame.image.load(image_path)
         self.__bomb = pygame.transform.scale(self.__bomb, (15, 15))
         self.__bomb.fill((0, 0, 0, 255), None, pygame.BLEND_RGB_MULT)
         self.__bomb.fill((255, 10, 10, 255), None, pygame.BLEND_RGB_ADD)

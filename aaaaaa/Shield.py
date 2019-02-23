@@ -1,4 +1,4 @@
-from Powerup import Powerup
+from aaaaaa.Powerup import Powerup
 
 
 class Shield(Powerup):
