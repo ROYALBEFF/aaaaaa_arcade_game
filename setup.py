@@ -9,6 +9,6 @@ setup(
     platforms='ALL',
     install_requires=['pygame>=1.9.4'],
     packages=find_packages(),
-    package_data={'': ['*.png']}
-    # entry_points={'console_scripts': ['binary_name = aaaaaa:main']},
+    package_data={'': ['*.png']},
+    entry_points={'console_scripts': ['aaaaaa = aaaaaa:main']}
 )
