@@ -7,7 +7,7 @@ First clone the project and navigate to the project directory, then run the `set
 ```{bash}
 git clone https://github.com/ROYALBEFF/aaaaaa_arcade_game.git
 cd aaaaaa_arcade_game
-python setup.py install --user
+sudo python3 setup.py install
 ```
 
 After the installation you can run the game from command-line: 
